@@ -1,0 +1,94 @@
+# =============== Configuration file for module: Detection and quantification =============
+# Use this config-file to switch on/off the features that you need for your personal research.
+# Furthermore, you can set the detailed parameters for the respective features.
+
+
+module3_gene_expression_quantification_and_analysis_settings:
+  # =============== 1.1 Switch variables =============
+  switch_variables:
+    run_outrider_analysis:   False     # Run Outrider analysis: Identifies gene expression outliers
+    run_salmon_analysis:      True   # Run salmon analysis: Quantifies transcripts
+    run_kallisto_analysis:    False   # Run kallisto analysis: Quantifies transcripts
+    run_rsem_analysis:        False   # Run rsem analysis: Quantifies transcripts & gene expression
+    run_mae_analysis:         False   # Run mae analysis: Detects mono-allelic expression
+
+    run_overall_summary:      True
+
+  # =============== 1.2 Output directories =============
+  # The output directories for the respective tool-outputs are defined here.
+  # This is important for importing the outputs into the GUI
+  output_directories:
+    outrider_output_dir: "outrider"
+    salmon_output_dir: "salmon"
+    kallisto_output_dir: "kallisto"
+    rsem_output_dir: "rsem"
+    mae_output_dir: "mae"
+
+    summary_output_dir: "overall_summary"
+
+  # =============== 2. Required settings & input files for submodules =============
+  # ATTENTION: Use absolute paths when defining input file paths!!!
+
+  # Reference transcritpome build
+  # ATTENTION: Currently, only GRCh38 is supported
+  reference_transcriptome_build:
+    "GRCh38_chr21"          # "GRCh37" or "GRCh38" or "GRCh38_chr21" (for testing purposes)
+
+  # Whether to use the trimmed FASTQ files as input for the quantification tools
+  # If yes: The trimmed FASTQ files created by the QC & Preprocessing module are used as input [Trimmomatic output]
+  use_trimmed_fastq_files:  
+    True                # Either True or False
+
+  # Directory, where the alignment results are stored
+  # Choices:
+  #   1. star               - Uses the STAR-alignment results
+  #   2. olego              - Uses the Olego-alignment results
+  #   3. directory-URI      - Searches the given directory for BAM-files
+  # Expects for every sample to have a subdirectory with the same name as the sample name!
+  # E.g. dir: "output/star" -> expects as input: "output/star/{sample}/{sample}.sorted.bam"
+  # ATTENTION: STAR is recommended for the use with this module!
+  input_dir_of_bam_files:
+    "star"
+    # "olego"
+    # "/Users/oliverkuchler/Studium/Master_BioInfo_Berlin/Masterthesis/Topic_Splicing_Variants/splice-prediction/snakemake_workflows/Snakemake_Main/output/module_qc_preproc_and_alignment/output/star"
+
+  # Attributes of aligned files (input BAM files)
+  bam_files_attributes:
+    filename_extension: # File extension of the input BAM files
+      ".sorted.bam"
+    sorted:
+      "position"      # Either position (for position-sorted) or name (for name-sorted)
+
+  # --------- 2.1 OUTRIDER settings ---------
+  outrider_settings:
+    table_additional_input_samples:
+      # Table with BAM files / directories with BAM files to be included as background samples
+      # ATTENTION: Use absolute paths when defining input file paths!!!
+
+    # Declare specific genes of interest -> Separate plots will be created for these genes
+    genes_of_interest:
+      # e.g. [ "ENSG00000137656-BUD13", "ENSG00000119760-SUPT7L" ]
+      []
+
+  # --------- 2.2 Salmon settings ---------
+  salmon_settings:
+    # Whether to include a Gene Set Enrichment Analysis (GSEA)
+    run_gse_analysis:
+      True
+
+  # --------- 2.3 Kallisto settings ---------
+  kallisto_settings:
+    # Whether to include a Gene Set Enrichment Analysis (GSEA)
+    run_gse_analysis:
+      True
+
+  # --------- 2.4 RSEM settings ---------
+  rsem_settings:
+    # Settings for enabling transcript to gene mapping
+    transcript_to_gene_mapping:
+      # Whether to enable transcript to gene mapping
+      enable_mapping: True
+
+  # -------- 2.5 Monoallelic expression settings ---------
+  mae_settings:
+    # None

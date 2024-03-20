@@ -1,0 +1,149 @@
+# =============== Configuration file for module: Splicing Patterns analysis =============
+# Use this config-file to switch on/off the features that you need for your personal research.
+# Furthermore, you can set the detailed parameters for the respective features.
+
+
+module4_splicing_patterns_analysis_settings:
+  # =============== 1. Module wide settings =============
+
+  # =============== 1.1 Switch variables =============
+  switch_variables:
+    run_dexseq_analysis: True
+    run_fraser_analysis: False
+    run_irfinder_analysis: False
+    run_leafcutter_analysis: True
+    run_leafcutter_md_analysis: False
+    run_private_junction_detection: True
+    run_rmats: True
+    run_whippet: True
+
+    run_overall_summary: True
+
+  # =============== 1.2 Output directories =============
+  # The output directories for the respective tool-outputs are defined here.
+  # This is important for importing the outputs into the GUI
+  output_directories:
+    leafcutter_output_dir: "leafcutter"
+    dexseq_output_dir: "dexseq"
+    fraser_output_dir: "fraser"
+    irfinder_output_dir: "irfinder"
+    private_junction_detection_output_dir: "private_junction_detection"
+    rmats_output_dir: "rmats"
+    whippet_output_dir: "whippet"
+    
+    summary_output_dir: "overall_summary"
+
+
+  # =============== 1.3 BAM files =============
+  # ATTENTION: Use absolute paths when defining input file paths!!!
+  # Directory, where the alignment results are stored
+  # Choices:
+  #   1. star               - Uses the STAR-alignment results
+  #   2. olego              - Uses the Olego-alignment results
+  #   3. directory-URI      - Searches the given directory for BAM-files
+  # Expects for every sample to have a subdirectory with the same name as the sample name (see following example)!
+  # E.g. dir: "output/star" -> expects as input: "output/star/{sample}/{sample}.sorted.bam"
+  input_dir_of_bam_files:
+    "star"
+  # "olego"
+  # "/Users/oliverkuchler/Studium/Master_BioInfo_Berlin/Masterthesis/Topic_Splicing_Variants/splice-prediction/snakemake_workflows/Snakemake_Main/output/module_qc_preproc_and_alignment/output/star"
+  # "/Users/oliverkuchler/Studium/Master_BioInfo_Berlin/Masterthesis/Topic_Splicing_Variants/splice-prediction/snakemake_workflows/Snakemake_Main/output/module1_qc_preproc_and_alignment/output/olego"
+
+  # Attributes of aligned files (input BAM files)
+  bam_files_attributes:
+    # Reference genome build that was used to create the input BAM files
+    reference_genome_build:
+      "GRCh38_chr21"          # "GRCh37" or "GRCh38" or "GRCh38_chr21" (for testing purposes)
+
+    filename_extension:   # File extension of the input BAM files
+      ".sorted.bam"
+    sorted:
+      "position"      # Either position (for position-sorted) or name (for name-sorted)
+
+
+  # ======================== 2. Tool specific settings =============
+    # =============== 2.1 Leafcutter settings =============
+  leafcutter_settings:
+
+    # =============== 2.1.1 Leafcutter general settings =============
+    # Directory name for leafcutter output
+    leafcutter_project_output_dir:
+      "leafcutter_output"
+
+    # =============== 2.1.2. Leafcutter-Regtools: Junction file creation =============
+    regtools_settings:
+      # Junctions, with a minimum length on both sides of the junction, are considered as valid junctions
+      regtools_junctions_anchor_length: 8                 # Default: 8
+      # Minimum/Maximum required intron length -> Intron size = junction.end - junction.start
+      regtools_junctions_minimum_intron_length: 50        # Default: 50
+      regtools_junctions_maximum_intron_length: 500000    # Default: 500000
+
+
+    # =============== 2.1.3 Leafcutter clustering =============
+    leafcutter_clustering_supporting_split_reads: 8   # Supporting split reads needed for a cluster to be considered
+    leafcutter_clustering_maximum_intron_length: 500000   # Intron size = junction.end - junction.start
+    output_prefix: "all"                                    # Prefix for cluster file
+
+    # =============== 2.1.4 Leafcutter splicing analysis =============
+    leafcutter_max_cluster_size: 1000                 # Don't test clusters with more than this many introns
+    leafcutter_min_samples_per_intron: 1              # Ignore introns used in fewer than this many samples
+    leafcutter_min_samples_per_group: 1               # Require this many samples in each group to have at least min_coverage reads
+    leafcutter_min_coverage: 10                       # Require min_samples_per_group samples in each group to have at least this many reads
+
+    # =============== 2.1.5 Leafviz =============
+    # If True, a RData file is produced, which can be used for the Leafviz tool (for visualization of the results)
+    produce_leafviz_RData_file: True            # Either True or False
+
+  # =============== 2.2 DexSeq general settings =============
+  dexseq_settings:
+    # Additional to workflow report: Specify settings for the DEXSeq analysis summary report (which includes graphical plots)
+    summary_report:
+      false_discovery_rate:
+        0.05          # Default: 0.05, otherwise a lot of data can be generated
+
+
+  # =============== 2.3 Irfinder general settings =============
+  irfinder_settings:
+    # Nothing to set here
+
+  # =============== 2.4 Private Junction Detection =============
+  private_junction_detection_settings:
+
+    # =============== 2.4.1 Regtools settings to extract junctions from BAM files =============
+    # Junctions, with a minimum length on both sides of the junction, are considered as valid junctions
+    # Set to one to include all mapped reads in consideration
+    regtools_junctions_anchor_length: 1         # default: 8
+    # Minimum/Maximum required intron length -> Intron size = junction.end - junction.start
+    regtools_junctions_minimum_intron_length: 50        # Default: 50
+    regtools_junctions_maximum_intron_length: 500000    # Default: 500000
+
+    # Whether to ignore strandedness information when comparing junctions
+    regtools_junctions_ignore_strand: True
+
+
+  # =============== 2.5 Fraser: Differential splicing analysis =============
+  fraser_settings:
+    table_additional_input_samples:
+        # Table with BAM files / directories with BAM files to be included as background samples
+        # ATTENTION: Use absolute paths when defining input file paths!!!
+
+  # =============== 2.6 rMATS: Measuring and statistical analysis of splice metrics =============
+  rmats_settings:
+    # Library type of BAM-files: fr-unstranded, fr-firststrand, fr-secondstrand
+    library_type:
+      "fr-unstranded"   # Default: fr-unstranded -> Choose this, if you don't know the library type or if you have a mixed library type
+    # Average length of reads in provided BAM-files
+    average_read_length:
+      150
+    # Whether reads of different length shall be considered
+    consider_variable_read_length:
+      True        # Either True or False
+    # Consider potential novel splice sites:
+    # --novelSS is an experimental feature that allows splicing events to be detected that involve an unannotated splice site.
+    consider_novel_splice_sites:
+      True        # Either True or False
+
+  # =============== 2.7 Whippet: Splice graph representation of transcriptome structure =============
+  whippet_settings:
+    whippet_installation_dir:
+      "./lib"
