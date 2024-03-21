@@ -9,7 +9,7 @@
 module1_qc_preprocessing_and_alignment_settings:
   switch_variables:
     # Switch variables to decide which features are to be included
-    run_check_of_strandedness: True      # Run python script to check strandedness of input read files
+    run_check_of_strandedness: False      # Run python script to check strandedness of input read files
     run_trimmomatic: True                # Run trimmomatic: Quality trimming of input reads
     run_kraken2: True                    # Run Kraken2: Check for potential contamination via Kraken2
     run_fastqc_before_trimming: True      # Run fastqc: Quality control of input reads before trimming

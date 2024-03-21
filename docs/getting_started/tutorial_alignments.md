@@ -4,7 +4,6 @@ This is done by the first module of SnakeSplice, which is called `module1_qc_pre
 
 We decide to use the following tools for this module:
 
-- **Check Strandedness**: How_are_we_stranded
 - **Read trimming**: Trimmomatic
 - **Alignment**: STAR
 - **Quality control (Reads)**: Kraken2
