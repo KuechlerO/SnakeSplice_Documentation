@@ -4,8 +4,8 @@ ctr_sample2,ctl_samples_dir,sample_02_1.fastq,sample_02_2.fastq,true,None,revers
 ctr_sample3,ctl_samples_dir,sample_03_1.fastq,sample_03_2.fastq,true,None,reverse,tutorial_adaptors
 ctr_sample4,ctl_samples_dir,sample_04_1.fastq,sample_04_2.fastq,true,None,reverse,tutorial_adaptors
 ctr_sample5,ctl_samples_dir,sample_05_1.fastq,sample_05_2.fastq,true,None,reverse,tutorial_adaptors
-cdt_sample1,cdt_samples_dir,sample_01_1.fastq,sample_01_2.fastq,false,None,reverse,tutorial_adaptors
+cdt_sample1,cdt_samples_dir,sample_01_1.fastq,sample_01_2.fastq,false,Case1,reverse,tutorial_adaptors
 cdt_sample2,cdt_samples_dir,sample_02_1.fastq,sample_02_2.fastq,false,None,reverse,tutorial_adaptors
-cdt_sample3,cdt_samples_dir,sample_03_1.fastq,sample_03_2.fastq,false,None,reverse,tutorial_adaptors
-cdt_sample4,cdt_samples_dir,sample_04_1.fastq,sample_04_2.fastq,false,None,reverse,tutorial_adaptors
-cdt_sample5,cdt_samples_dir,sample_05_1.fastq,sample_05_2.fastq,false,None,reverse,tutorial_adaptors
+cdt_sample3,cdt_samples_dir,sample_03_1.fastq,sample_03_2.fastq,false,Case1,reverse,tutorial_adaptors
+cdt_sample4,cdt_samples_dir,sample_04_1.fastq,sample_04_2.fastq,false,Case1,reverse,tutorial_adaptors
+cdt_sample5,cdt_samples_dir,sample_05_1.fastq,sample_05_2.fastq,false,Case1,reverse,tutorial_adaptors

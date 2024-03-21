@@ -59,6 +59,8 @@ nav:
     - "Tutorial - Gene Expression": getting_started/tutorial_gene_expression.md
     - "Tutorial - Splicing": getting_started/tutorial_splicing.md
     - "Tutorial - Generate Reports": getting_started/tutorial_report_generation.md
+  - "SWP 2024":
+    - "Knatterton - Let's go!": swp2024/knatterton.md
   - "Pipeline Content":
     - "Overview": pipeline_content/overview.md
     - "Result Summary": pipeline_content/overall_summary.md

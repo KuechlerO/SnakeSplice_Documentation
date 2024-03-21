@@ -11,7 +11,6 @@ This module is the core of SnakeSplice and provides a comprehensive analysis of 
 
 In this part of the tutorial we will use the following tools for this module:
 
-- **DEXSeq**: DEXSeq is a tool for differential exon usage analysis.
 - **rMATS**: rMATS is a tool for differential splicing analysis.
 - **LeafCutter**: LeafCutter is a tool for splicing quantitative trait loci (sQTL) analysis.
 - **PJD-Tool**: PJD-Tool is a tool for the identification of private splice junctions.
@@ -55,7 +54,7 @@ Make sure to have this file saved under `config_files/config_main.yaml` in your 
 In addition to switching the respective tools on, SnakeSplice provides the possibility to adjust the parameters for the splicing pattern analysis in the module configuration file `config_files/config_module4_splicing_pattern_analysis.yaml`.
 
 So let's specifcy the parameters for the fourth module!
-Make sure to switch on __DexSeq__, __rMATS__, __LeafCutter__, __PJD-Tool__, __Whippet__, and the __overall summary__, which summarizes this module's results.
+Make sure to switch on __rMATS__, __LeafCutter__, __PJD-Tool__, __Whippet__, and the __overall summary__, which summarizes this module's results.
 
 
 !!! note "Reference transcriptome build"
@@ -72,7 +71,7 @@ Make sure to switch on __DexSeq__, __rMATS__, __LeafCutter__, __PJD-Tool__, __Wh
 
 An excerpt of the configuration file with the relevant settings is shown below:
 
-```yaml title="config_module4_splicing_pattern_analysis.yaml" hl_lines="8 11 13 14 15 17 22 28"
+```yaml title="config_module4_splicing_pattern_analysis.yaml" hl_lines="11 13 14 15 17 22 28"
 [...]
 
 module4_splicing_patterns_analysis_settings:
@@ -80,7 +79,7 @@ module4_splicing_patterns_analysis_settings:
 
   # =============== 1.1 Switch variables =============
   switch_variables:
-    run_dexseq_analysis: True
+    run_dexseq_analysis: False
     run_fraser_analysis: False
     run_irfinder_analysis: False
     run_leafcutter_analysis: True
@@ -146,9 +145,25 @@ Feel free to explore the results directly in your file system.
 
 
 ## 4.5 Troubleshooting
-Here are some issues that might occur during the execution of first module of the pipeline:
+Did you encounter any issues during the execution of the SnakeSplice pipeline?
+Here are some common issues and possible solutions:
 
-<span style="color:red;">TODO</span>
+``` bash title="Error message"
+FATAL: while extracting [...].snakemake/singularity/6a375c3a043145beefdd13e360f324de.simg:  
+root filesystem extraction failed:  
+extract command failed:  
+ERROR : Failed to create user namespace: user namespace disabled : exit status 1
+```
+
+The error message you're seeing suggests that user namespaces are disabled on your system. 
+User namespaces are a feature of the Linux kernel that Singularity uses to provide container functionality.
+
+**Possible solutions:**  
+
+1. **Suggestion**: 
+Was singularity installed correctly? 
+Simply installing it with conda **does not** guarantee that it will work correctly.  
+**Solution**: Install Singularity from the official website: [Singularity Installation](https://sylabs.io/singularity/) or use `sudo dnf install singularity-ce`.
 
 
 ## 4.6 Celebrate

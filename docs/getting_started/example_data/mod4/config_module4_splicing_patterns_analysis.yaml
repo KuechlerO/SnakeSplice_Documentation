@@ -8,7 +8,7 @@ module4_splicing_patterns_analysis_settings:
 
   # =============== 1.1 Switch variables =============
   switch_variables:
-    run_dexseq_analysis: True
+    run_dexseq_analysis: False
     run_fraser_analysis: False
     run_irfinder_analysis: False
     run_leafcutter_analysis: True
