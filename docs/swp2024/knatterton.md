@@ -26,6 +26,8 @@ Damit die BAM-files aus dem `star`-Ordner verwendet werden, ist es am einfachste
 Dafür könnt ihr folgenden Befehl verwenden:
 
 ```bash title="Copy BAM files"
+# Erstellt zuerst den Ordner und kopiert dann die BAM-Dateien
+mkdir -p /home/username/snakesplice/output/module1_qc_preproc_and_alignment/output/
 cp -r /home/sharedFolder/star /home/username/snakesplice/output/module1_qc_preproc_and_alignment/output/
 ```
 
