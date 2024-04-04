@@ -82,7 +82,7 @@ snakemake --profile profiles/profile_local
 ```
 
 ### 3.2 Einen Touch ausführen
-Nachdem dieser Schritt abgeschlossen ist, könnt wir die restlichen Tools aktivieren und führen einen `--touch` aus, um die fertigen BAM-Dateien zu markieren.
+Nachdem dieser Schritt abgeschlossen ist, können wir die restlichen Tools aktivieren und führen einen `--touch` aus, um die fertigen BAM-Dateien zu markieren.
 
 ``` yaml title="Configuration - All Tools" hl_lines="7 9 10 12 14 15 17"
 [...]

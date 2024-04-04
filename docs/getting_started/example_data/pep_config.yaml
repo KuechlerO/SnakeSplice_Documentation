@@ -17,4 +17,4 @@ sample_modifiers:
       cdt_samples_dir: "../input_data/simulated_reads_chr21_case1"
 
       # Variables for <adaptors_file>
-      tutorial_adaptors: "../input_data/adaptors_mix.fa"
+      tutorial_adaptors: "../input_data/sequencing_adaptors/adaptors_mix.fa"
