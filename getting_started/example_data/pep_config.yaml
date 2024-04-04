@@ -1,0 +1,20 @@
+# --------- Basic settings --------
+name: "SnakeSplice"
+pep_version: 2.1.0
+sample_table:
+  "../input_data/input_metadata.csv"
+
+# -------- Now modifications of sample attributes are defined here ---------
+sample_modifiers:
+  derive:                                   
+  # Manipulate existing entries: E.g. setting dynamically output file paths!
+  # if key1 appears in one attribute column, it is going to be replaced with "..."
+  # values in brackets are replaced by other attribute values!
+    attributes: [sample_directory, adaptors_file]  # attributes to consider
+    sources:
+      # Variables for <sample_directory>
+      ctl_samples_dir: "../input_data/simulated_reads_chr21_controls_selected"
+      cdt_samples_dir: "../input_data/simulated_reads_chr21_case1"
+
+      # Variables for <adaptors_file>
+      tutorial_adaptors: "../input_data/sequencing_adaptors/adaptors_mix.fa"
