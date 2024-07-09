@@ -148,6 +148,7 @@ Feel free to explore the results directly in your file system.
 Did you encounter any issues during the execution of the SnakeSplice pipeline?
 Here are some common issues and possible solutions:
 
+**1. Problems with Leafcutter container: User namespace** 
 ``` bash title="Error message"
 FATAL: while extracting [...].snakemake/singularity/6a375c3a043145beefdd13e360f324de.simg:  
 root filesystem extraction failed:  
@@ -158,13 +159,36 @@ ERROR : Failed to create user namespace: user namespace disabled : exit status 1
 The error message you're seeing suggests that user namespaces are disabled on your system. 
 User namespaces are a feature of the Linux kernel that Singularity uses to provide container functionality.
 
-**Possible solutions:**  
-
-1. **Suggestion**: 
+**Possible Solution**: 
 Was singularity installed correctly? 
 Simply installing it with conda **does not** guarantee that it will work correctly.  
 **Solution**: Install Singularity from the official website: [Singularity Installation](https://sylabs.io/singularity/) or use `sudo dnf install singularity-ce`.
 
+
+**2. Problems with Leafcutter container: Missing files** 
+``` bash title="Error message"
+IOError: [Errno 2] No such file or directory: 'output/module4_splicing_patterns_analysis/output/leafcutter/leafcutter_output/Bud13_Variant/juncfiles.txt' 
+```
+
+Normally Snakemake takes care of providing all required files to the docker container (usually the whole working directory is made available).
+However, corner cases exists: 
+- Soft links are not supported
+
+**Suggestion**: 
+Do not use soft links as input our output!
+
+
+**3. Problems with Leafcutter container: No space left** 
+``` bash title="Error message"
+FATAL ERROR: write_file: failed to create file /image/root/usr/local/lib/R/site-library/BH/include/boost/thread/once.hpp, because No space left on device: exit status 1' 
+```
+
+Sometimes the docker daemon will accumulate a lot of data without really needing it.
+Thus, the system is blocked with useless data garbage.
+
+**Suggestion**: 
+You can use pruning to delete all dangling data (containers, networks, and images), which are not under current usage:
+ `docker system prune --all`
 
 ## 4.6 Celebrate
 __**Hooray!**__
