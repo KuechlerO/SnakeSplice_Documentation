@@ -1,0 +1,1321 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../tutorial_alignments/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>Tutorial - Data set up - SnakeSplice</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorial-data-introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="SnakeSplice" class="md-header__button md-logo" aria-label="SnakeSplice" data-md-component="logo">
+      
+  <img src="../../img/logo/with_eyes2_2.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SnakeSplice
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tutorial - Data set up
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../installation/" class="md-tabs__link">
+          
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../swp2024/knatterton/" class="md-tabs__link">
+          
+  
+  SWP 2024
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../pipeline_content/overview/" class="md-tabs__link">
+          
+  
+  Pipeline Content
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="SnakeSplice" class="md-nav__button md-logo" aria-label="SnakeSplice" data-md-component="logo">
+      
+  <img src="../../img/logo/with_eyes2_2.svg" alt="logo">
+
+    </a>
+    SnakeSplice
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tutorial - Data set up
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial - Data set up
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extracting-the-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracting the data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pep-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      PEP files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main configuration file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module configuration files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celebrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Celebrate
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_alignments/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial - QC & Alignment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_gene_fusions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial - Gene Fusion Events
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_gene_expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial - Gene Expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_splicing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial - Splicing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial_report_generation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tutorial - Generate Reports
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SWP 2024
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            SWP 2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../swp2024/knatterton/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Knatterton - Let's go!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pipeline Content
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Pipeline Content
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_content/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_content/overall_summary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Result Summary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_content/qc_alignment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    QC & Alignmemt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_content/gene_fusions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gene Fusions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_content/gene_expression/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gene Expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pipeline_content/splicing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Splicing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extracting-the-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Extracting the data
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metadata-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metadata file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pep-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      PEP files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#main-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Main configuration file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Module configuration files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#celebrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Celebrate
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="tutorial-data-introduction">Tutorial - Data &amp; Introduction</h1>
+<p>This tutorial will guide you through the SnakeSplice pipeline.
+If you haven't installed SnakeSplice yet, please follow the <a href="../installation/">installation instructions</a> first.
+If you are completely new to the workflow system Snakemake, we recommend you to have a look at the <a href="https://snakemake.readthedocs.io/en/stable/">Snakemake documentation</a>.</p>
+<h2 id="example-data">Example data</h2>
+<p>We provide example data for testing SnakeSplice.
+It contains simulated RNA-seq data for a control group and three case groups.
+All samples are from chromosome 21 of the human genome.
+You can download the data from here:</p>
+<ul>
+<li><a href="https://mega.nz/file/AbFxWKbb#cM7l4jVcGPEoLisZl1bDpnEn47OCb_E01Z2v0_98OME">Control samples: FASTQ files</a></li>
+<li><a href="https://mega.nz/file/9L9WDbJY#vXWAHZh00zg3QTVvHPh4er_Jx_DcBl1y4N2teTxAOmY">Case 1 samples: FASTQ files</a></li>
+<li><a href="https://mega.nz/file/xS8SVBpI#qqOUn2IY18lhSisLgHitSlF9k0UFB8sAn8vWI0EhLN0">Case 2 samples: FASTQ files</a></li>
+<li><a href="https://mega.nz/file/FKdnmKYb#Hk_LpO70_Uwk2O9FekhqkHTV5kblQboFOZzifGmqaLA">Case 3 samples: FASTQ files</a></li>
+</ul>
+<p>In this tutorial we will use the control samples and the case 1 samples.</p>
+<h3 id="extracting-the-data">Extracting the data</h3>
+<p><strong>Prerequisite</strong>: You need to have downloaded the example data (the Control samples &amp; Case 1 samples) from the links above.
+Save the data in a directory of your choice.  </p>
+<p><strong>Now</strong>:
+Extract the files from the corresponding archives.
+To follow this tutorial please run following commands (here <strong>case1</strong> is used as an example):</p>
+<div class="language-bash highlight"><span class="filename">Extracting the data</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Change to your SnakeSplice directory (the </span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># cloned SnakeSplice repository)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>snakesplice
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Create a new directory for the example data</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">cd</span><span class="w"> </span>input_data
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># unpack the downloaded data</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>/path/to/simulated_reads_chr21_controls.tar.gz<span class="w"> </span>-C<span class="w"> </span>.
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>/path/to/simulated_reads_chr21_case1.tar.gz<span class="w"> </span>-C<span class="w"> </span>.
+</span></code></pre></div>
+<p>Now you should have two novel directories in your <code>input_data</code> directory, one for the control samples and one for the case samples.</p>
+<h2 id="metadata-file">Metadata file</h2>
+<p>The metadata file is a CSV (Comma Separated Values) file that contains information about the samples.
+It is used to link the samples to the corresponding groups and conditions.
+You can place the metadata file anywhere on your system, but we recommend to place it in the <code>input_data</code> directory.</p>
+<p>Attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Column name</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sample_name</td>
+<td>Name of the sample</td>
+<td>"sample1"</td>
+</tr>
+<tr>
+<td>sample_directory</td>
+<td>Path to the directory containing the sample</td>
+<td>"path/to/sample1" or "some_variable" (some_variable must be defined in PEP config file)</td>
+</tr>
+<tr>
+<td>read1</td>
+<td>Name of the first read file</td>
+<td>"sample1_R1.fastq"</td>
+</tr>
+<tr>
+<td>read2</td>
+<td>Name of the second read file</td>
+<td>"sample1_R2.fastq"</td>
+</tr>
+<tr>
+<td>control</td>
+<td><code>true</code> if sample is control sample or <code>false</code> if not</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>condition</td>
+<td>Name of the condition, or None if control sample</td>
+<td><code>condition1</code></td>
+</tr>
+<tr>
+<td>stranded</td>
+<td>Strandedness of the library</td>
+<td>"reverse"</td>
+</tr>
+<tr>
+<td>adaptors_file</td>
+<td>Path to the file containing the adaptors</td>
+<td>"path/to/adaptors.fa" or "some_variable" (some_variable must be defined in the PEP config file)</td>
+</tr>
+</tbody>
+</table>
+<p>To follow this tutorial you can use the CSV-file as is provided through the SnakeSplice repository (<code>input_data/input_metadata.csv</code>). However, the example metadata CSV-file can also be downloaded here: <a href="../example_data/input_metadata.csv">Download CSV</a>.</p>
+<h2 id="pep-files">PEP files</h2>
+<p>The SnakeSplice pipeline uses the <a href="http://pep.databio.org/">Portable Encapsulated Project</a> (PEP) format to define the <a href="#metadata-file">metadata file</a> and to set variables that are used in the metadata file.
+The file <code>pep/pep_config.yaml</code> is used to identify which file is used as metadata file for our execution and to define variables that are can be referenced in the metadata file.</p>
+<p>Changeable attributes (ignore the rest for now):</p>
+<table>
+<thead>
+<tr>
+<th>YAML directive</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sample_table</td>
+<td>Path to the metadata file (relative to this YAML file)</td>
+<td>"../input_data/input_metadata.csv"</td>
+</tr>
+<tr>
+<td>sources</td>
+<td>Variables that are used in the metadata file in the columns <strong>sample_directory</strong> and <strong>adaptors_file</strong></td>
+<td><code>adaptors_file: "path/to/adaptors.fa"</code></td>
+</tr>
+</tbody>
+</table>
+<p>To follow this tutorial you can use the <code>pep_config.yaml</code> file as is provided through the SnakeSplice repository. However, the example PEP file can also be downloaded here: <a href="../example_data/pep_config.yaml">Download PEP</a>.</p>
+<h2 id="configuration-files">Configuration files</h2>
+<p>Here we will shortly discuss the structure of the configuration files that are used to control the SnakeSplice pipeline.
+However, this is just to give you an overview of the files and their purpose.
+We will come back to the configuration files later in the tutorial.</p>
+<h3 id="main-configuration-file">Main configuration file</h3>
+<p>The main configuration file for SnakeSplice is called <code>config_main.yaml</code> and is located in the SnakeSplice directory under <code>config_files</code>.
+It defines a name for the project, controls which modules are executed, and sets the paths to the output directories of the respective modules.</p>
+<p>Atttributes:</p>
+<table>
+<thead>
+<tr>
+<th>YAML directive</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>run_identifier</td>
+<td>Name of the project</td>
+<td>"tutorial_run"</td>
+</tr>
+<tr>
+<td>module_switches</td>
+<td>Each module has its own entry here, where the values <code>True</code> and <code>False</code> signal whether to execute a specific module or not</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td>module_output_dir_names</td>
+<td>The paths to the output directories of the respective modules</td>
+<td>"output/module1_qc_preproc_and_alignment"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module-configuration-files">Module configuration files</h3>
+<p>Since SnakeSplice is divided into multiple modules, each module has its own configuration file:</p>
+<ul>
+<li><code>config_module1_qc_preproc_alignment.yaml</code></li>
+<li><code>config_module2_gene_fusion.yaml</code></li>
+<li><code>config_module3_gene_expression_quantification_and_analysis_settings.yaml</code></li>
+<li><code>config_module4_splicing_patterns_analysis.yaml</code></li>
+<li><code>config_files/config_module5_variant_calling.yaml</code></li>
+</ul>
+<p>Atttributes:</p>
+<table>
+<thead>
+<tr>
+<th>YAML directive</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>switch_variables</td>
+<td>Each tool has its own entry here, where the values <code>True</code> and <code>False</code> signal whether to execute a specific tool</td>
+<td><code>True</code></td>
+</tr>
+<tr>
+<td>output directories</td>
+<td>The name of the output folder for a specific tool</td>
+<td><code>multiqc_output_dir: "multiqc"</code></td>
+</tr>
+<tr>
+<td>tool-specific parameters</td>
+<td>The parameters for a specific tool</td>
+<td><code>file_kraken2_db: "path/to/kraken2_db"</code></td>
+</tr>
+<tr>
+<td>module-specific parameters</td>
+<td>The parameters for a specific module</td>
+<td><code>reference_transcriptome_build: "GRCh38_chr21"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary">Summary</h2>
+<p>After having followed the instructions above, your file structure should look like this (compare with <code>tree -L 2</code>):</p>
+<p><img alt="image" src="../example_data/overall_file_structure.png" /></p>
+<h2 id="celebrate">Celebrate</h2>
+<p>You have successfully obtained the data necessary for this tutorial. Great!<br />
+So let's move on to the next step:
+<a href="../tutorial_alignments/">Quality control, pre-processing and alignment</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

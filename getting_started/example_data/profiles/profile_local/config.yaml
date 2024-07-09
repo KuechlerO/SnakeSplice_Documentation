@@ -1,0 +1,36 @@
+# Profile config.yaml for local execution
+
+# Inspired by:
+# https://www.sichong.site/2020/02/25/snakemake-and-slurm-how-to-manage-workflow-with-resource-constraint-on-hpc/
+
+# ============ Resources =============== #
+cores: 8
+
+# Default resources for each single rule
+default-resources: [cpus=1, mem_mb=6000]
+
+# Set resources constraints
+# single_threaded: 1 -> pseudo-resource to indicate that a rule is single-threaded
+resources: [cpus=8, mem_mb=30000, single_threaded=1]
+
+# ============ Execution-Settings =============== #
+# Rerun tasks depending only on last modification times (ignoring e.g. changed params)
+# This is set in place, due to error with checkpoints, which causes reruns all the time...
+rerun-triggers: mtime
+
+# Enable using conda wrappers
+use-conda: True
+# Go on with independent jobs, if a job fails
+keep-going: True
+# Wait given seconds if an output file of a job is not present after the job finished.
+latency-wait: 60
+# Rerun all jobs where the output is incomplete
+rerun-incomplete: True
+# Printout shell commands that will be executed
+printshellcmds: True
+# -> Set shadow: "minimal" for rules who leverage it
+# Rules use often "os.rename" -> causes error: https://stackoverflow.com/questions/42392600/oserror-errno-18-invalid-cross-device-link/43967659#43967659
+# shadow-prefix: "/sc-scratch/sc-scratch-btg"         # Does it work? -> Relative paths?
+
+# max nr of jobs
+jobs: 50

@@ -1,0 +1,5 @@
+sample_name,sample_directory,read1,read2,control,condition,stranded,adaptors_file
+sim_ctr_sample1,ctl_samples_dir,sample_01_1.fastq,sample_01_2.fastq,true,None,reverse,tutorial_adaptors
+sim_ctr_sample2,ctl_samples_dir,sample_02_1.fastq,sample_02_2.fastq,true,None,reverse,tutorial_adaptors
+sim_cdt_sample1,cdt_samples_dir,sample_01_1.fastq,sample_01_2.fastq,false,Case1,reverse,tutorial_adaptors
+sim_cdt_sample2,cdt_samples_dir,sample_02_1.fastq,sample_02_2.fastq,false,Case1,reverse,tutorial_adaptors
